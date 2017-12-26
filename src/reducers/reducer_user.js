@@ -1,4 +1,4 @@
-import {SIGNED_IN} from '../constants';
+import { SIGNED_IN } from '../constants';
 
 let user = {
     email: null

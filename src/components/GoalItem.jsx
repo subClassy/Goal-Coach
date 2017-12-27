@@ -26,6 +26,7 @@ class GoalItem extends Component {
         ) 
     }
 }
+
 function mapStateToProps(state) {
     const { user } = state;
     return {
@@ -33,4 +34,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default (mapStateToProps, null)(GoalItem);
+export default connect(mapStateToProps, null)(GoalItem);

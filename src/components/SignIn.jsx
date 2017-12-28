@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { firebaseApp, auth, provider } from '../firebase';
+import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
 
 class SignIn extends Component {
     constructor(props) {
@@ -25,8 +25,18 @@ class SignIn extends Component {
             }) 
     }
 
-    handleGooglLogin() {
-        auth.signInWithPopup(provider) 
+    handleGoogleLogin() {
+        auth.signInWithPopup(providerGoogle) 
+            .then((result) => {
+                const user = result.user;
+                this.setState({
+                    user
+            });
+        });
+    }
+
+    handleFacebookLogin() {
+        auth.signInWithPopup(providerFacebook) 
             .then((result) => {
                 const user = result.user;
                 this.setState({
@@ -72,10 +82,18 @@ class SignIn extends Component {
                     <button
                         className = "btn btn-danger"
                         type = "button"
-                        onClick = {() => this.handleGooglLogin()}
+                        onClick = {() => this.handleGoogleLogin()}
                         style = {{marginLeft: '5px'}}
                     >
                         Sign In With Google
+                    </button>
+                    <button
+                        className = "btn btn-primary"
+                        type = "button"
+                        onClick = {() => this.handleFacebookLogin()}
+                        style = {{marginLeft: '5px'}}
+                    >
+                        Sign In With Facebook
                     </button>
                 </div>
                 <div>{this.state.error.message}</div>

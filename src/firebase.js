@@ -10,7 +10,8 @@ const config = {
 };
 
 export const firebaseApp = firebase.initializeApp(config);
-export const provider = new firebase.auth.GoogleAuthProvider();
+export const providerGoogle = new firebase.auth.GoogleAuthProvider();
+export const providerFacebook = new firebase.auth.FacebookAuthProvider();
 export const auth = firebase.auth();
 export const goalRef = firebase.database().ref('goals');
 export const completeGoalRef = firebase.database().ref('completeGoals');

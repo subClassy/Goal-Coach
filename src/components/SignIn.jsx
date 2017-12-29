@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
+import '../App.css';
 
 class SignIn extends Component {
     constructor(props) {
@@ -55,57 +56,60 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div className = "form-inline" style = {{margin: '5%'}}>
-                <h2> Sign In</h2>
-                <div className = "form-group">
-                    <input
-                        className = "form-control"
-                        type = "text"
-                        style = {{marginRight: '5px'}}
-                        placeholder = "email"
-                        onChange = {
-                            event => this.setState({
-                                email: event.target.value
-                            })
-                        }
-                    />
-                    <input
-                        className = "form-control"
-                        type = "password"
-                        style = {{marginRight: '5px'}}
-                        placeholder = "password"
-                        onChange = {
-                            event => this.setState({
-                                password: event.target.value
-                            })
-                        }
-                    />
-                    <button
-                        className = "btn btn-primary"
-                        type = "button"
-                        onClick = {() => this.signIn()}
-                    >
-                        Sign In
-                    </button>
-                    <button
-                        className = "btn btn-danger"
-                        type = "button"
-                        onClick = {() => this.handleGoogleLogin()}
-                        style = {{marginLeft: '5px'}}
-                    >
-                        Sign In With Google
-                    </button>
-                    <button
-                        className = "btn btn-primary"
-                        type = "button"
-                        onClick = {() => this.handleFacebookLogin()}
-                        style = {{marginLeft: '5px'}}
-                    >
-                        Sign In With Facebook
-                    </button>
+            <div className = "Sign-In-Form">
+                <h1>Goal Coach</h1>
+                <div className = "form-horizontal SignIn-Form">
+                    <div className = "Form">
+                        <h2> Sign In </h2>
+                        <div className = "form-group">
+                            <input
+                                className = "form-control"
+                                type = "text"
+                                placeholder = "email"
+                                onChange = {
+                                    event => this.setState({
+                                        email: event.target.value
+                                    })
+                                }
+                            />
+                            <input
+                                className = "form-control"
+                                type = "password"
+                                placeholder = "password"
+                                onChange = {
+                                    event => this.setState({
+                                        password: event.target.value
+                                    })
+                                }
+                            />
+                            <button
+                                className = "btn btn-primary"
+                                type = "button"
+                                onClick = {() => this.signIn()}
+                            >
+                                Sign In
+                            </button>
+                            <button
+                                className = "btn btn-danger"
+                                type = "button"
+                                onClick = {() => this.handleGoogleLogin()}
+                                style = {{marginLeft: '5px'}}
+                            >
+                                Sign In With Google
+                            </button>
+                            <button
+                                className = "btn btn-primary"
+                                type = "button"
+                                onClick = {() => this.handleFacebookLogin()}
+                                style = {{marginLeft: '5px'}}
+                            >
+                                Sign In With Facebook
+                            </button>
+                        </div>
+                        <div>{this.state.error.message}</div>
+                        <div><Link to = {'/signup'}>SignUp instead</Link></div>
+                    </div>
                 </div>
-                <div>{this.state.error.message}</div>
-                <div><Link to = {'/signup'}>SignUp instead</Link></div>
             </div>
         )
     }

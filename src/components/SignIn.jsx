@@ -32,7 +32,11 @@ class SignIn extends Component {
                 this.setState({
                     user
             });
-        });
+        })
+        .catch(error => {
+            console.log(error);
+            this.setState({error});
+        })
     }
 
     handleFacebookLogin() {
@@ -42,7 +46,11 @@ class SignIn extends Component {
                 this.setState({
                     user
             });
-        });
+        })
+        .catch(error => {
+            console.log(error);
+            this.setState({error});
+        })
     }
 
     render() {

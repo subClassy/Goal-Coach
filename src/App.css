@@ -14,46 +14,23 @@ h1 {
     font-weight: 100;
 }
 
-.SignIn-Form {
-    width: 50%;
-    height:590px;
-    margin: 2em auto;
-    margin-left: 25%;
-    position: relative;
-    z-index: 1;
-    -moz-perspective: 800px;
-    -webkit-perspective: 800px;
-    -o-perspective: 800px;
-    -ms-perspective: 800px;
-    perspective: 800px;
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    font-weight: 80;
 }
 
-.Form {
-    width: 87%;
-    height: 84%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -moz-transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-	-o-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -moz-transition: 0.8s;
-    -webkit-transition: 0.8s;
-    -o-transition: 0.8s;
-    transition: 0.8s;
-    background: #12494f;
+.SignIn-Container {
+    width: 75%;
     padding: 2em;
-	-webkit-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
-	-moz-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
-	-o-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
-	-ms-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
-    box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
 }
+
+.SignIn-Box {
+    background: #12494f;
+    box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
+    padding: 3em;
+    padding-top: 1em;
+}
+
 

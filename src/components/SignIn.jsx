@@ -117,7 +117,9 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                             </button>
                                         </div>
                                     </div>
-                                    <div>{this.state.error.message}</div>
+                                    {
+                                        (this.state.error.message !== '') ? alert(this.state.error.message) : <p></p>
+                                    }
                                     <hr />
                                     <p className = "signup-link"><Link to = {'/signup'} className = "link">Sign Up Instead</Link></p>
                                 </div>

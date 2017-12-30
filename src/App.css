@@ -1,4 +1,5 @@
-.Sign-In-Form {
+body {
+    font-family: 'Athiti', sans-serif;
     background: url(Assets/1.png)repeat #00e7ff 0px 0px;
     background-attachment: fixed;
     height: 100vh;
@@ -11,14 +12,15 @@ h1 {
     font-size: 3em;
     text-align: center;
     color: #fff;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
+    color: #e89406;
     text-align: center;
-    color: #fff;
-    font-weight: 80;
+    margin: 0 0 1em;
+    font-weight: 25;
 }
 
 .SignIn-Container {
@@ -33,4 +35,117 @@ h2 {
     padding-top: 1em;
 }
 
+.signin-form {
+    padding-top: 2em;
+    width: 30%;
+    height: 590px;
+    float: none;
+    margin: 0 auto;
+}
 
+.signin-form label {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 1em 0 .5em;
+    padding: 0;
+}
+
+.email-input, .password-input {
+    outline: none;
+    font-size: 2em;
+    color: #e8e8e8;
+    padding: .8em 1em;
+    margin: auto;
+    border: none;
+    -webkit-appearance: none;
+    display: block;
+    background: #256a71;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px; 
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+    border-radius: 3px; 
+    font-family: 'Athiti', sans-serif;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+@media(max-width:1440px){
+    .signin-form {
+        width: 33%;
+        height: 605px; 
+    }
+}
+
+@media(max-width:1366px){
+    .signin-form {
+        width: 36%;
+        height: 605px;
+    }
+}
+
+@media(max-width:1080px){
+    .signin-form {
+        width: 44%; 
+    }
+}
+
+@media(max-width:1024px){
+    .signin-form {
+        width: 47%;
+    }
+}
+
+@media(max-width:800px){
+    h1 {
+        font-size: 2.5em; 
+    }
+    .signin-form {
+        width: 60%;
+        margin: 1em auto;
+    }
+}
+
+@media(max-width:736px){
+    .signin-form {
+        width: 67%; 
+        height: 570px;
+    }
+}
+
+@media(max-width:667px){
+    .signin-form {
+        width: 71%;
+        height: 560px;
+    }
+}
+
+@media(max-width:640px){
+    .signin-form {
+        width: 72%; 
+    }
+}
+
+@media(max-width:600px){
+    .signin-form {
+        width: 80%;
+    }  
+}
+
+@media(max-width:568px){  
+    .signin-form {
+        width: 84%;
+        height: 540px;
+    }
+}
+
+@media(max-width:480px){ 
+    .signin-form {
+        width: 90%; 
+        height: 470px;
+    }
+
+    .signin-form Label {
+        font-size: 0.9em; 
+    }
+}

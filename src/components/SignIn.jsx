@@ -1,85 +1,86 @@
 import React, { Component } from 'react';
-import { Container, Box, Columns, Column } from 'bloomer';
+import { Box, Columns, Column } from 'bloomer';
 import { Link } from 'react-router';
 import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
 import '../App.css';
+import { Label } from 'bloomer/lib/elements/Form/Label';
 
-class SignIn extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: '',
-            error: {
-                message: ''
-            },
-            user: null
+    class SignIn extends Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                email: '',
+                password: '',
+                error: {
+                    message: ''
+                },
+                user: null
+            }
         }
-    }
 
-    signIn() {
-        console.log(this.state);
-        const {email, password} = this.state;
-        firebaseApp.auth().signInWithEmailAndPassword(email, password)
+        signIn() {
+            console.log(this.state);
+            const {email, password} = this.state;
+            firebaseApp.auth().signInWithEmailAndPassword(email, password)
+                .catch(error => {
+                    console.log(error);
+                    this.setState({error});
+                }) 
+        }
+
+        handleGoogleLogin() {
+            auth.signInWithPopup(providerGoogle) 
+                .then((result) => {
+                    const user = result.user;
+                    this.setState({
+                        user
+                });
+            })
             .catch(error => {
                 console.log(error);
                 this.setState({error});
-            }) 
-    }
+            })
+        }
 
-    handleGoogleLogin() {
-        auth.signInWithPopup(providerGoogle) 
-            .then((result) => {
-                const user = result.user;
-                this.setState({
-                    user
-            });
-        })
-        .catch(error => {
-            console.log(error);
-            this.setState({error});
-        })
-    }
+        handleFacebookLogin() {
+            auth.signInWithPopup(providerFacebook) 
+                .then((result) => {
+                    const user = result.user;
+                    this.setState({
+                        user
+                });
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({error});
+            })
+        }
 
-    handleFacebookLogin() {
-        auth.signInWithPopup(providerFacebook) 
-            .then((result) => {
-                const user = result.user;
-                this.setState({
-                    user
-            });
-        })
-        .catch(error => {
-            console.log(error);
-            this.setState({error});
-        })
-    }
-
-    render() {
-        return (
-            <div className = "Sign-In-Form">
-                <h1>Goal Coach</h1>
-                <Columns isCentered>
-                    <Column isSize = {{mobile: 8, desktop: 1/3}}>
-                        <Container isFluid>
+        render() {
+            return (
+                <Columns className = "Sign-In-Form"> 
+                    <h1> Goal Coach </h1>
+                    <Column className = "signin-form">
+                        {/* <Container isFluid> */}
                             <Box className = "SignIn-Box">
                                 <div className = "form-horizontal">
                                     <h2> Sign In </h2>
+                                    <hr />
                                     <div className = "form-group">
+                                        <Label className = "label">Email</Label>
                                         <input
-                                            className = "form-control"
+                                            className = "form-control email-input"
                                             type = "text"
-                                            placeholder = "email"
                                             onChange = {
                                                 event => this.setState({
                                                     email: event.target.value
                                                 })
                                             }
                                         />
+                                        <Label className = "label">Password</Label>
                                         <input
-                                            className = "form-control"
+                                            className = "form-control password-input"
                                             type = "password"
-                                            placeholder = "password"
                                             onChange = {
                                                 event => this.setState({
                                                     password: event.target.value
@@ -114,12 +115,11 @@ class SignIn extends Component {
                                     <div><Link to = {'/signup'}>SignUp instead</Link></div>
                                 </div>
                             </Box>
-                        </Container>
+                        {/* </Container> */}
                     </Column>
                 </Columns>
-            </div>
-        )
+            )
+        }
     }
-}
 
-export default SignIn;
+    export default SignIn;

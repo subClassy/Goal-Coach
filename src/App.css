@@ -19,7 +19,7 @@ h2 {
     font-size: 2.5em;
     color: #e89406;
     text-align: center;
-    margin: 0 0 1em;
+    margin: 0.2 0 0.7em;
     font-weight: 25;
 }
 
@@ -68,6 +68,52 @@ h2 {
     font-family: 'Athiti', sans-serif;
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+.signin-btn {
+    font-size: 1.4em;
+    color: #fff;
+    background: #e89406;
+    border: 3px solid #e89406;
+    outline: none;
+    cursor: pointer;
+    padding: .3em 1em;
+    -webkit-appearance: none;
+    width: 100%;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px; 
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.alt-signin {
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: -10px;
+    padding: 0;
+}
+
+.oAuth-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.oAuth-btn {
+    margin-right: 5px;
+    width: 45%;
+}
+
+.signup-link {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0;
+}
+
+.link {
+    color: #db7b00;
 }
 
 @media(max-width:1440px){

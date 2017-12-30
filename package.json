@@ -6,6 +6,7 @@
     "bloomer": "^0.6.3",
     "bulma": "^0.6.1",
     "firebase": "^4.8.1",
+    "font-awesome": "^4.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",

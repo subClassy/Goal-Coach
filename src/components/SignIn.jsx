@@ -88,31 +88,38 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                             }
                                         />
                                         <button
-                                            className = "btn btn-primary"
+                                            className = "btn signin-btn"
                                             type = "button"
                                             onClick = {() => this.signIn()}
                                         >
-                                            Sign In
+                                            SIGN IN
                                         </button>
-                                        <button
-                                            className = "btn btn-danger"
-                                            type = "button"
-                                            onClick = {() => this.handleGoogleLogin()}
-                                            style = {{marginLeft: '5px'}}
-                                        >
-                                            Sign In With Google
-                                        </button>
-                                        <button
-                                            className = "btn btn-primary"
-                                            type = "button"
-                                            onClick = {() => this.handleFacebookLogin()}
-                                            style = {{marginLeft: '5px'}}
-                                        >
-                                            Sign In With Facebook
-                                        </button>
+                                        <hr /> 
+                                        <p className = "alt-signin"> Sign In Using : </p>
+                                        <div className = "oAuth-btns">
+                                            <button
+                                                className = "btn btn-danger oAuth-btn"
+                                                type = "button"
+                                                onClick = {() => this.handleGoogleLogin()}
+                                                style = {{marginLeft: '5px'}}
+                                            >
+                                                <i className="fa fa-google" aria-hidden="true" style = {{marginRight: '5px'}}></i>
+                                                Google
+                                            </button>
+                                            <button
+                                                className = "btn btn-primary oAuth-btn"
+                                                type = "button"
+                                                onClick = {() => this.handleFacebookLogin()}
+                                                style = {{marginLeft: '5px'}}
+                                            >
+                                                <i className="fa fa-facebook" aria-hidden="true" style = {{marginRight: '5px'}}></i>
+                                                Facebook
+                                            </button>
+                                        </div>
                                     </div>
                                     <div>{this.state.error.message}</div>
-                                    <div><Link to = {'/signup'}>SignUp instead</Link></div>
+                                    <hr />
+                                    <p className = "signup-link"><Link to = {'/signup'} className = "link">Sign Up Instead</Link></p>
                                 </div>
                             </Box>
                         {/* </Container> */}

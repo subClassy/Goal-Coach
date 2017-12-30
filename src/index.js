@@ -10,6 +10,7 @@ import reducer from './reducers';
 import App from './components/App';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 const store = createStore(reducer);
 

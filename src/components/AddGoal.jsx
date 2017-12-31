@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { goalRef } from '../firebase';
+import '../App.css';    
+import { Control } from 'bloomer/lib/elements/Form/Control';
+import { Field } from 'bloomer/lib/elements/Form/Field/Field';
+import { Input } from 'bloomer/lib/elements/Form/Input';
+import { Button } from 'bloomer/lib/elements/Button';
 
 class AddGoal extends Component {
     constructor(props) {
@@ -19,23 +24,25 @@ class AddGoal extends Component {
 
     render() {
         return (
-            <div className = "form-inline">
-                <div className = "form-group">
-                    <input 
-                        type = "text"
-                        placeholder = "Add a Goal"
-                        className = "form-control"
-                        style = {{marginRight: '5p'}}
-                        onChange = {event => this.setState({title: event.target.value})}
-                    />
-                    <button
-                        className = "btn btn-success"
-                        type = "button"
-                        onClick = {() => this.addGoal()}
-                    >
+            <div className = "add-goal-form">
+                <Field isGrouped className = "add-goal-field">
+                    <Control>
+                        <Input
+                            type = "text"
+                            placeholder = "Add a Goal"
+                            style = {{marginRight: '5px'}}
+                            onChange = {event => this.setState({title: event.target.value})}
+                        />
+                    </Control>
+                    <Control>
+                        <Button
+                            isColor='primary'
+                            onClick = {() => this.addGoal()}
+                        >
                         Submit
-                    </button>
-                </div>
+                        </Button>
+                    </Control>
+                </Field>
             </div>
         )
     }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { firebaseApp } from '../firebase';
-import { Columns } from 'bloomer/lib/grid/Columns';
-import { Column } from 'bloomer/lib/grid/Column';
 import { Box } from 'bloomer/lib/elements/Box';
 import { Label } from 'bloomer/lib/elements/Form/Label';
 
@@ -39,9 +37,9 @@ class SignUp extends Component {
 
     render() {
         return (
-            <Columns className = "Sign-Up-Form">
+            <div className = "Sign-Up-Form">
                 <h1> Goal Coach </h1>
-                <Column className = "signup-form">
+                <div className = "signup-form">
                     <Box className = "signup-box">
                         <div className = "form-horizontal">
                             <h2>Sign Up</h2>
@@ -82,8 +80,8 @@ class SignUp extends Component {
                             <p className = "signin-link"><Link to = {'/signin'} className = "link">Already a user ? Sign in instead</Link></p>
                         </div>
                     </Box>
-                </Column>
-            </Columns>
+                </div>
+            </div>
         )
     }
 }

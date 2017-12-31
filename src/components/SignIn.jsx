@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Columns, Column } from 'bloomer';
+import { Box } from 'bloomer';
 import { Link } from 'react-router';
 import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
 import '../App.css';
@@ -58,9 +58,9 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
 
         render() {
             return (
-                <Columns className = "Sign-In-Form"> 
+                <div className = "Sign-In-Form"> 
                     <h1> Goal Coach </h1>
-                    <Column className = "signin-form">
+                    <div className = "signin-form">
                         {/* <Container isFluid> */}
                             <Box className = "SignIn-Box">
                                 <div className = "form-horizontal">
@@ -125,8 +125,8 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                 </div>
                             </Box>
                         {/* </Container> */}
-                    </Column>
-                </Columns>
+                    </div>
+                </div>
             )
         }
     }

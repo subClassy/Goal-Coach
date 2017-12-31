@@ -5,7 +5,10 @@ import AddGoal from './AddGoal';
 import GoalList from './GoalList';
 import CompleteGoalList from './CompleteGoalList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
- import '../../node_modules/react-tabs/style/react-tabs.css';
+import '../../node_modules/react-tabs/style/react-tabs.css';
+import '../App.css';
+import { Columns } from 'bloomer/lib/grid/Columns';
+import { Column } from 'bloomer/lib/grid/Column';
 
 class App extends Component {
     signOut() {
@@ -14,43 +17,49 @@ class App extends Component {
 
     render() {
         return (
-            <div style = {{margin: '5px'}}>
-                <h3>Goal Coach</h3>
-                <AddGoal />
-                <hr />
-                <Tabs>
-                    <TabList>
-                        <Tab>All</Tab>
-                        <Tab>Incomplete</Tab>
-                        <Tab>Completed</Tab>
-                    </TabList>
+            <Columns>
+                <Column isSize = {{desktop: 6, tablet: 8, mobile: 10}} isOffset = {{desktop: 3, tablet: 2, mobile: 1}}>
+                    <div className = "app">
+                        <h1>Goal Coach</h1>
+                        <div className = "add-goal-container">
+                            <AddGoal />
+                        </div>
+                        <hr />
+                        <Tabs>
+                            <TabList>
+                                <Tab>All</Tab>
+                                <Tab>Incomplete</Tab>
+                                <Tab>Completed</Tab>
+                            </TabList>
 
-                    <TabPanel>
-                        <h4>Goals</h4>
-                        <GoalList />
-                        <hr />
-                        <h4>Complete Goals</h4>
-                        <CompleteGoalList />
-                        <hr />
-                    </TabPanel>
-                    <TabPanel>
-                        <h4>Goals</h4>
-                        <GoalList />
-                        <hr />
-                    </TabPanel>
-                    <TabPanel>
-                        <h4>Complete Goals</h4>
-                        <CompleteGoalList />
-                        <hr />
-                    </TabPanel>
-                </Tabs>
-                <button 
-                    className = "btn btn-danger"
-                    onClick = {() => this.signOut()}
-                >
-                Sign Out
-                </button>
-            </div>
+                            <TabPanel>
+                                <h4>Goals</h4>
+                                <GoalList />
+                                <hr />
+                                <h4>Complete Goals</h4>
+                                <CompleteGoalList />
+                                <hr />
+                            </TabPanel>
+                            <TabPanel>
+                                <h4>Goals</h4>
+                                <GoalList />
+                                <hr />
+                            </TabPanel>
+                            <TabPanel>
+                                <h4>Complete Goals</h4>
+                                <CompleteGoalList />
+                                <hr />
+                            </TabPanel>
+                        </Tabs>
+                        <button 
+                            className = "btn btn-danger"
+                            onClick = {() => this.signOut()}
+                        >
+                        Sign Out
+                        </button>
+                    </div>
+                </Column>
+            </Columns>
         )
     }
 }

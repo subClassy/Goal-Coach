@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setCompleted } from '../actions';
 import { completeGoalRef } from '../firebase';
+import '../App.css';
 
 class CompleteGoalList extends Component {
      componentDidMount() {
@@ -20,13 +21,13 @@ class CompleteGoalList extends Component {
      }
 
     render() {
-        return (
+        return ( 
             <div>
                 {
                     this.props.completeGoals.map((completeGoal, index) => {
                         const { email, title } = completeGoal;
                         return (
-                            <div key = {index}>
+                            <div key = {index} className = "complete-goal-item">
                                 <strong>{title}</strong> completed by <em>{email}</em>
                             </div>
                         )

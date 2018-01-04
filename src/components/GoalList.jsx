@@ -17,7 +17,7 @@ class GoalList extends Component {
         })
     }
 
-    render() {
+    render() { 
         return (
             <div>
                 {

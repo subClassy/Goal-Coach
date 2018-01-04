@@ -159,6 +159,7 @@ h2 {
 }
 
 .tabs h4 {
+    font-size: 24px;
     padding: 10px;
     color: #ffa600;
 }
@@ -167,6 +168,9 @@ h2 {
     color: rgb(199, 199, 199)
 }
 
+.complete-goal-item {
+    margin: 5px;
+}
 
 @media(max-width:1440px){
     .signin-form, .signup-form {

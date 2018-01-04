@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { goalRef } from '../firebase';
+import { firebaseApp } from '../firebase';
 import '../App.css';    
 import { Control } from 'bloomer/lib/elements/Form/Control';
 import { Field } from 'bloomer/lib/elements/Form/Field/Field';
@@ -22,6 +23,10 @@ class AddGoal extends Component {
         goalRef.push({email, title});
     }
 
+    signOut() {
+        firebaseApp.auth().signOut();
+    }
+
     render() {
         return (
             <div className = "add-goal-form">
@@ -40,6 +45,14 @@ class AddGoal extends Component {
                             onClick = {() => this.addGoal()}
                         >
                         Submit
+                        </Button>
+                    </Control>
+                    <Control>
+                        <Button 
+                            isColor = 'danger'
+                            onClick = {() => this.signOut()}
+                        >
+                        Sign Out
                         </Button>
                     </Control>
                 </Field>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { firebaseApp } from '../firebase';
 import AddGoal from './AddGoal';
 import GoalList from './GoalList';
 import CompleteGoalList from './CompleteGoalList';
@@ -11,9 +10,6 @@ import { Columns } from 'bloomer/lib/grid/Columns';
 import { Column } from 'bloomer/lib/grid/Column';
 
 class App extends Component {
-    signOut() {
-        firebaseApp.auth().signOut();
-    }
 
     render() {
         return (
@@ -25,38 +21,34 @@ class App extends Component {
                             <AddGoal />
                         </div>
                         <hr />
-                        <Tabs>
-                            <TabList>
-                                <Tab>All</Tab>
-                                <Tab>Incomplete</Tab>
-                                <Tab>Completed</Tab>
-                            </TabList>
+                        <div className = "tabs">
+                            <Tabs>
+                                <TabList>
+                                    <Tab>All</Tab>
+                                    <Tab>Incomplete</Tab>
+                                    <Tab>Completed</Tab>
+                                </TabList>
 
-                            <TabPanel>
-                                <h4>Goals</h4>
-                                <GoalList />
-                                <hr />
-                                <h4>Complete Goals</h4>
-                                <CompleteGoalList />
-                                <hr />
-                            </TabPanel>
-                            <TabPanel>
-                                <h4>Goals</h4>
-                                <GoalList />
-                                <hr />
-                            </TabPanel>
-                            <TabPanel>
-                                <h4>Complete Goals</h4>
-                                <CompleteGoalList />
-                                <hr />
-                            </TabPanel>
-                        </Tabs>
-                        <button 
-                            className = "btn btn-danger"
-                            onClick = {() => this.signOut()}
-                        >
-                        Sign Out
-                        </button>
+                                <TabPanel>
+                                    <h4>Goals</h4>
+                                    <GoalList />
+                                    <hr />
+                                    <h4>Complete Goals</h4>
+                                    <CompleteGoalList />
+                                    <hr />
+                                </TabPanel>
+                                <TabPanel>
+                                    <h4>Goals</h4>
+                                    <GoalList />
+                                    <hr />
+                                </TabPanel>
+                                <TabPanel>
+                                    <h4>Complete Goals</h4>
+                                    <CompleteGoalList />
+                                    <hr />
+                                </TabPanel>
+                            </Tabs>
+                        </div>
                     </div>
                 </Column>
             </Columns>

@@ -148,6 +148,26 @@ h2 {
     margin: 0 auto;
 }
 
+.tabs {
+    color: white;
+}
+
+.react-tabs {
+    display: table;
+    margin: 0 auto;
+    min-width: 100%;
+}
+
+.tabs h4 {
+    padding: 10px;
+    color: #ffa600;
+}
+
+.tabs strong {
+    color: rgb(199, 199, 199)
+}
+
+
 @media(max-width:1440px){
     .signin-form, .signup-form {
         width: 33%;

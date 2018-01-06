@@ -30,8 +30,9 @@ If you would like to download the code and try it for yourself:
 1. Clone the repo: `git clone https://github.com/himank-goel/Goal-Coach.git`
 2. `cd Goal-Coach`
 2. Install packages: `npm install`
-3. Start dev server: `npm start`
-4. Open your browser at: `http://localhost:3000`
+3. Type `git config core.hooksPath .githooks`
+4. Start dev server: `npm start`
+5. Open your browser at: `http://localhost:3000`
 
 ## Firebase Setup
 

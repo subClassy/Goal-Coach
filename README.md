@@ -66,7 +66,7 @@ If you would like to download the code and try it for yourself:
 Supports LTS version (v8).
 
 ## Author
-[Himank Goel](himank-goel.github.io/Portfolio-Website/)
+[Himank Goel](https://himank-goel.github.io/Portfolio-Website/)
 
 ## License
 [MIT](https://github.com/himank-goel/Goal-Coach/blob/master/LICENSE)

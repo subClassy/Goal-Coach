@@ -6,7 +6,7 @@ const config = {
     databaseURL: "https://goalcoach-78340.firebaseio.com",
     projectId: "goalcoach-78340",
     storageBucket: "goalcoach-78340.appspot.com",
-    messagingSenderId: "41445809351 "
+    messagingSenderId: "41445809351  "
 };
 
 export const firebaseApp = firebase.initializeApp(config);

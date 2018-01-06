@@ -33,6 +33,27 @@ If you would like to download the code and try it for yourself:
 3. Start dev server: `npm start`
 4. Open your browser at: `http://localhost:3000`
 
+## Firebase Setup
+
+1. Go to the [Firebase](http://firebase.com/) website and sign up or log in
+2. Go to the [Firebase console](https://console.firebase.google.com/) and make a new project
+3. Click **Add project**
+4. Choose a name and a location
+5. Click **Add Firebase to your web app** 
+6. Copy the **config** variable and replace it in the *src/firebase.js*
+
+## Enabling Authentication on Firebase
+
+1. Go to the [Firebase console](https://console.firebase.google.com/)
+2. Choose the previously made project
+3. Open **Develop** options on the sidebar
+4. Choose **Authentication** and under *Sign-in Methods* enable **Email/Password** 
+5. Click Save
+ > **Note:**  
+   >  To enable OAuth using Google and Facebook follow the links and read **Before you Begin**:
+ >  >For [Google](https://firebase.google.com/docs/auth/web/google-signin#before_you_begin)  
+ >  >For [Facebook](https://firebase.google.com/docs/auth/web/facebook-login#before_you_begin)
+  
 ## Browser Support
 
 - Chrome 42+

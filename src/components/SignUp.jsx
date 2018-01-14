@@ -45,6 +45,17 @@ class SignUp extends Component {
                             <h2>Sign Up</h2>
                             <hr />
                             <div className = "form-group">
+                                 
+                                <Label className = "label">Name</Label>
+                                <input
+                                    className = "form-control name-input"
+                                    type = "text"
+                                    onChange = {
+                                        event => this.setState({
+                                            name: event.target.value
+                                        })
+                                    }
+                                />
                                 <Label className = "label">Email</Label>
                                 <input
                                     className = "form-control email-input"

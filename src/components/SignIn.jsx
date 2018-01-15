@@ -35,6 +35,14 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                     this.setState({
                         user
                 });
+                
+                
+                    firebase.database().ref('users/' + user.uid).set({
+                    username: user.displayName,
+            
+            
+            
+        });
             })
             .catch(error => {
                 console.log(error);
@@ -49,6 +57,13 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                     this.setState({
                         user
                 });
+                
+                    firebase.database().ref('users/' + user.uid).set({
+                    username: user.displayName,
+            
+            
+            
+        });
             })
             .catch(error => {
                 console.log(error);

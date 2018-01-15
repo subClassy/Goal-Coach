@@ -54,7 +54,7 @@ h2 {
     float: left;
 }
 
-.email-input, .password-input {
+.email-input, .password-input, .name-input{
     outline: none;
     font-size: 2em;
     color: #e8e8e8;

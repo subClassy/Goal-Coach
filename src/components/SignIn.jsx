@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Box } from 'bloomer';
 import { Link } from 'react-router';
+import * as firebase from 'firebase';
 import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
 import '../App.css';
 import { Label } from 'bloomer/lib/elements/Form/Label';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { firebaseApp } from '../firebase';
+import * as firebase from 'firebase';
 import { Box } from 'bloomer/lib/elements/Box';
 import { Label } from 'bloomer/lib/elements/Form/Label';
 
@@ -10,6 +11,7 @@ class SignUp extends Component {
         this.state = {
             email: '',
             password: '',
+            name:'',
             error: {
                 message: ''
             }
@@ -18,10 +20,16 @@ class SignUp extends Component {
 
     signUp() {
         console.log(this.state);
-        const {email, password} = this.state;
+        const {email, password,name} = this.state;
         firebaseApp.auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 var user = firebaseApp.auth().currentUser;
+                 firebase.database().ref('users/' + user.uid).set({
+                 username: name,
+                 
+            
+            
+                 });
                 user.sendEmailVerification().then(function() {
                     console.log("verification email sent")
                   }).catch(function(error) {

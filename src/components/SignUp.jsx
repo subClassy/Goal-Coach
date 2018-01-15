@@ -26,7 +26,7 @@ class SignUp extends Component {
                 var user = firebaseApp.auth().currentUser;
                  firebase.database().ref('users/' + user.uid).set({
                  username: name,
-                 email: email,
+                 
             
             
                  });

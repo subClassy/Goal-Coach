@@ -4,6 +4,7 @@ import { completeGoalRef, goalRef } from '../firebase';
 import * as firebase from 'firebase';
 import { firebaseApp } from '../firebase';
 
+
 class GoalItem extends Component {
     completeGoal() {
         const {email} = this.props.user;

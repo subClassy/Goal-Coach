@@ -23,7 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://himank-goel.github.io/Goal-Coach/",
+  "homepage": "https://Tlazypanda.github.io/Goal-Coach/",
   "devDependencies": {
     "gh-pages": "^1.1.0"
   }

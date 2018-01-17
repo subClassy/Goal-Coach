@@ -28,6 +28,17 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                     this.setState({error});
                 }) 
         }
+        
+        resetemail()
+        {const {email, password} = this.state;
+            auth.sendPasswordResetEmail(email).then(function() {
+                console.log("mail sent");
+                alert("Reset password email is sent.");
+  // Email sent.
+}).catch(function(error) {
+  // An error happened.
+});
+        }
 
         handleGoogleLogin() {
             auth.signInWithPopup(providerGoogle) 
@@ -109,6 +120,13 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                             onClick = {() => this.signIn()}
                                         >
                                             SIGN IN
+                                        </button>
+                                        <button
+                                            className = "btn signin-btn"
+                                            type = "button"
+                                            onClick = {() => this.resetemail()}
+                                        >
+                                            Forgot Password
                                         </button>
                                         <hr /> 
                                         <p className = "alt-signin"> Sign In Using : </p>

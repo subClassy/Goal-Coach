@@ -16,10 +16,21 @@ const store = createStore(reducer);
 
 firebaseApp.auth().onAuthStateChanged(user => {
     if(user) {
-        const { displayName } = user;
+            console.log(user.emailVerified);
+            const { displayName } = user;
         const email = displayName; 
         store.dispatch(logUser(email));
-        hashHistory.push('/app'); 
+        if(user.emailVerified) {
+        hashHistory.push('/app');
+               
+      } else { 
+        alert('Please check your inbox for a verification e-mail and follow the instructions');
+        user.sendEmailVerification().then(function() {
+            hashHistory.replace('/signin');
+          
+        });
+      }
+         
     }
     else {
         hashHistory.replace('/signin');

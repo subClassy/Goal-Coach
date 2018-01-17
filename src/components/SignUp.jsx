@@ -19,16 +19,12 @@ class SignUp extends Component {
     }
 
     signUp() {
-        console.log(this.state);
         const {email, password,name} = this.state;
         firebaseApp.auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 var user = firebaseApp.auth().currentUser;
                  firebase.database().ref('users/' + user.uid).set({
-                 username: name,
-                 
-            
-            
+                    username: name,
                  });
                 user.sendEmailVerification().then(function() {
                     console.log("verification email sent")

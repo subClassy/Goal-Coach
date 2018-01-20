@@ -10,6 +10,7 @@ import reducer from './reducers';
 import App from './components/App';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import emailverify from './components/emailverify';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 const store = createStore(reducer);
@@ -25,7 +26,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
         } else { 
             alert('Please check your inbox for a verification e-mail and follow the instructions');
             user.sendEmailVerification().then(function() {
-                hashHistory.replace('/signin');
+                hashHistory.replace('/emailverify');
             });
         }
     }
@@ -38,6 +39,7 @@ ReactDOM.render(
     <Provider store = {store}>
         <Router path = "/" history = {hashHistory}>
             <Route path = "/app" component = {App} />
+            <Route path = "/emailverify" component = {emailverify} />
             <Route path = "/signin" component = {SignIn} />
             <Route path = "/signup" component = {SignUp} />
         </Router>

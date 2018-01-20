@@ -23,7 +23,18 @@ h2 {
     font-weight: 25;
 }
 
+.centre{
+    font-family: cursive;
+    padding: 100px;
+}
 .SignIn-Box, .signup-box {
+    background: #12494f;
+    box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
+    padding: 3em;
+    padding-top: 1em;
+}
+
+.Verify-Box {
     background: #12494f;
     box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
     padding: 3em;

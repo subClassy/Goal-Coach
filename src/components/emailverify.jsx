@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Box } from 'bloomer';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -6,7 +7,7 @@ import { Router, Route, browserHistory, hashHistory } from 'react-router';
 import { firebaseApp } from '../firebase';
 import { logUser } from '../actions/index';
 import reducer from '../reducers';
-
+import '../App.css';
 import App from './App';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
@@ -40,7 +41,8 @@ firebaseApp.auth().onAuthStateChanged(user => {
 
 render(){ 
             return (
-                    <div>
+                    <div className="centre">
+                    <Box className = "Verify-Box">
                     <h1>You have not verified your email yet.Sorry folks.Kindly check your inbox and verify for account activation </h1>
                     
                 <button
@@ -49,7 +51,7 @@ render(){
                                     onClick = {() => window.location.reload()}
                                 >
                                     Try Again
-                                </button></div>
+                        </button></Box></div>
                         
             )
 }

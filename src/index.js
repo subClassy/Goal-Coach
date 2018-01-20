@@ -24,11 +24,8 @@ firebaseApp.auth().onAuthStateChanged(user => {
         if(user.emailVerified) {
             hashHistory.push('/app');
         } else { 
-            alert('Please check your inbox for a verification e-mail and follow the instructions');
-            user.sendEmailVerification().then(function() {
                 hashHistory.replace('/emailverify');
-            });
-        }
+         }
     }
     else {
         hashHistory.replace('/signin');

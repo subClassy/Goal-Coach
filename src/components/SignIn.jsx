@@ -27,6 +27,7 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                     console.log(error);
                     this.setState({error});
                 }) 
+            window.location.reload();
         }
         
         resetemail()

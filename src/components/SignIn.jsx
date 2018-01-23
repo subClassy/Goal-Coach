@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import * as firebase from 'firebase';
 import { firebaseApp, auth, providerGoogle, providerFacebook } from '../firebase';
 import '../App.css';
+import '../bootstrap-social.css';
 import { Label } from 'bloomer/lib/elements/Form/Label';
 
     class SignIn extends Component {
@@ -83,6 +84,39 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                 this.setState({error});
             })
         }
+        
+        handleGithubLogin() {
+            var provider = new firebase.auth.GithubAuthProvider();
+           firebase.auth().signInWithPopup(provider).then((result)=> {
+           const user = result.user;
+               this.setState({user});
+                    firebase.database().ref('users/' + user.uid).set({
+                    username: user.displayName,
+            });
+
+}).catch((error)=> {
+  
+               console.log(error)
+               this.setState({error});
+});
+        }
+        
+         handleTwitterLogin() {
+            var provider = new firebase.auth.TwitterAuthProvider();
+           firebase.auth().signInWithPopup(provider).then((result)=> {
+           const user = result.user;
+               this.setState({user});
+                    firebase.database().ref('users/' + user.uid).set({
+                    username: user.displayName,
+    
+        });
+
+}).catch((error)=> {
+               console.log(error)
+               this.setState({error});
+ });
+        }
+
 
         render() {
             return (
@@ -122,12 +156,13 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                         >
                                             SIGN IN
                                         </button>
-                                        <p   className = "signup-link password-reset"><Link onClick = {() => this.resetemail()} className = "link">Forgot Password</Link></p>
+                                        <hr />
+                                        <p   className = "signup-link"><Link onClick = {() => this.resetemail()} className = "link">Forgot Password</Link></p>
                                         <hr /> 
                                         <p className = "alt-signin"> Sign In Using : </p>
                                         <div className = "oAuth-btns">
                                             <button
-                                                className = "btn btn-danger oAuth-btn"
+                                                className = "btn btn-google oAuth-btn"
                                                 type = "button"
                                                 onClick = {() => this.handleGoogleLogin()}
                                                 style = {{marginLeft: '5px'}}
@@ -136,13 +171,31 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                                 Google
                                             </button>
                                             <button
-                                                className = "btn btn-primary oAuth-btn"
+                                                className = "btn btn-facebook oAuth-btn"
                                                 type = "button"
                                                 onClick = {() => this.handleFacebookLogin()}
                                                 style = {{marginLeft: '5px'}}
                                             >
                                                 <i className="fa fa-facebook" aria-hidden="true" style = {{marginRight: '5px'}}></i>
                                                 Facebook
+                                            </button>
+                                            <button
+                                                className = "btn btn-github oAuth-btn"
+                                                type = "button"
+                                                onClick = {() => this.handleGithubLogin()}
+                                                style = {{marginLeft: '5px'}}
+                                            >
+                                                <i className="fa fa-github" aria-hidden="true" style = {{marginRight: '5px'}}></i>
+                                                Github
+                                            </button>
+                                            <button
+                                                className = "btn btn-twitter oAuth-btn "
+                                                type = "button"
+                                                onClick = {() => this.handleTwitterLogin()}
+                                                style = {{marginLeft: '5px'}}
+                                            >
+                                                <i className="fa fa-twitter" aria-hidden="true" style = {{marginRight: '5px'}}></i>
+                                                Twitter
                                             </button>
                                         </div>
                                     </div>

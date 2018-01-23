@@ -122,7 +122,6 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                         >
                                             SIGN IN
                                         </button>
-                                        <hr />
                                         <p   className = "signup-link"><Link onClick = {() => this.resetemail()} className = "link">Forgot Password</Link></p>
                                         <hr /> 
                                         <p className = "alt-signin"> Sign In Using : </p>

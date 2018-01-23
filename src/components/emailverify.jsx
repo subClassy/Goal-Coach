@@ -43,7 +43,7 @@ render(){
             return (
                     <div className="centre">
                     <Box className = "Verify-Box">
-                    <h1>You have not verified your email yet.Sorry folks.Kindly check your inbox and verify for account activation </h1>
+                    <h1>You have not verified your email yet. Sorry folks. Kindly check your inbox and verify for account activation.</h1>
                     
                 <button
                                     className = "btn signup-btn"

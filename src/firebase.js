@@ -1,13 +1,14 @@
 import * as firebase from 'firebase'
 
-const config = {
-    apiKey: "AIzaSyCoPiCpEqQo9ZPkziJkrqxpPw9XrKdLghA",
-    authDomain: "goalcoach-78340.firebaseapp.com",
-    databaseURL: "https://goalcoach-78340.firebaseio.com",
-    projectId: "goalcoach-78340",
-    storageBucket: "goalcoach-78340.appspot.com",
-    messagingSenderId: "41445809351"
-};
+ var config = {
+    apiKey: "AIzaSyBMmMKaW6GlxZ4QK85SOCBCQSHSj213g3E",
+    authDomain: "project1-ca43a.firebaseapp.com",
+    databaseURL: "https://project1-ca43a.firebaseio.com",
+    projectId: "project1-ca43a",
+    storageBucket: "project1-ca43a.appspot.com",
+    messagingSenderId: "177943592967"
+  };
+
 
 export const firebaseApp = firebase.initializeApp(config);
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();

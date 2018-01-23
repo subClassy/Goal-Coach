@@ -1,7 +1,10 @@
-body {
+html,body {
     font-family: 'Athiti', sans-serif;
     background: url(Assets/1.png)repeat #00e7ff 0px 0px;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -38,6 +41,7 @@ h2 {
     box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
     padding: 3em;
     padding-top: 1em;
+    margin-bottom: 2em;
 }
 
 .Verify-Box {
@@ -135,6 +139,24 @@ h2 {
     padding: 0;
     margin-bottom: 12px;
 }
+
+@media (max-width: 768px) {
+  .btn {
+    padding:7px 3px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+
 
 .oAuth-btns {
     display: flex;

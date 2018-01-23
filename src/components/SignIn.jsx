@@ -156,8 +156,7 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                         >
                                             SIGN IN
                                         </button>
-                                        <hr />
-                                        <p   className = "signup-link"><Link onClick = {() => this.resetemail()} className = "link">Forgot Password</Link></p>
+                                        <p   className = "signup-link password-reset"><Link onClick = {() => this.resetemail()} className = "link">Forgot Password</Link></p>
                                         <hr /> 
                                         <p className = "alt-signin"> Sign In Using : </p>
                                         <div className = "oAuth-btns">

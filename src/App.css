@@ -27,6 +27,12 @@ h2 {
     font-family: Athiti, sans-serif;
     padding: 100px;
 }
+
+.password-reset {
+    margin-top: 20px;
+    margin-bottom: -8px;
+}
+
 .SignIn-Box, .signup-box {
     background: #12494f;
     box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
@@ -69,7 +75,7 @@ h2 {
     outline: none;
     font-size: 1.2em;
     color: #e8e8e8;
-    padding: 1.6em 1em;
+    padding: 1.3em 1em;
     margin: auto;
     border: none;
     -webkit-appearance: none;

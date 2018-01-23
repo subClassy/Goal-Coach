@@ -67,9 +67,9 @@ h2 {
 
 .email-input, .password-input, .name-input{
     outline: none;
-    font-size: 2em;
+    font-size: 1.2em;
     color: #e8e8e8;
-    padding: .8em 1em;
+    padding: 1.6em 1em;
     margin: auto;
     border: none;
     -webkit-appearance: none;

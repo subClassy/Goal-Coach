@@ -136,6 +136,24 @@ h2 {
     margin-bottom: 12px;
 }
 
+@media (max-width: 768px) {
+  .btn {
+    padding:7px 3px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+
+
 .oAuth-btns {
     display: flex;
     justify-content: center;

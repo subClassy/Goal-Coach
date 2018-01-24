@@ -35,6 +35,7 @@ class SignUp extends Component {
             })
             .catch(error => {
                 console.log(error);
+                alert(error.message);
                 this.setState({error});
             }) 
     }
@@ -88,9 +89,6 @@ class SignUp extends Component {
                                     SIGN UP
                                 </button>
                             </div>
-                            {
-                                (this.state.error.message !== '') ? alert(this.state.error.message) : <p></p>
-                            }
                             <hr />
                             <p className = "signin-link"><Link to = {'/signin'} className = "link">Already a user ? Sign in instead</Link></p>
                         </div>

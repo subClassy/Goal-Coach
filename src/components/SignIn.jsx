@@ -26,8 +26,10 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
             firebaseApp.auth().signInWithEmailAndPassword(email, password)
                 .catch(error => {
                     console.log(error);
+                    alert(error.message);
                     this.setState({error});
                 }) 
+            if(!this.state.error)
             window.location.reload();
         }
         
@@ -198,9 +200,6 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
                                             </button>
                                         </div>
                                     </div>
-                                    {
-                                        (this.state.error.message !== '') ? alert(this.state.error.message) : <p></p>
-                                    }
                                     <hr />
                                     <p className = "signup-link"><Link to = {'/signup'} className = "link">Sign Up Instead</Link></p>
                                 </div>

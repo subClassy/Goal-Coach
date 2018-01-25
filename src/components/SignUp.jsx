@@ -12,9 +12,6 @@ class SignUp extends Component {
             email: '',
             password: '',
             name:'',
-            error: {
-                message: ''
-            }
         }
     }
 
@@ -30,13 +27,11 @@ class SignUp extends Component {
                     console.log("verification email sent")
                   }).catch(function(error) {
                     console.log(error);
-                    this.setState({error});
                   });
             })
             .catch(error => {
                 console.log(error);
                 alert(error.message);
-                this.setState({error});
             }) 
     }
 

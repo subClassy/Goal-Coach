@@ -12,9 +12,6 @@ class SignUp extends Component {
             email: '',
             password: '',
             name:'',
-            error: {
-                message: ''
-            }
         }
     }
 
@@ -30,12 +27,11 @@ class SignUp extends Component {
                     console.log("verification email sent")
                   }).catch(function(error) {
                     console.log(error);
-                    this.setState({error});
                   });
             })
             .catch(error => {
                 console.log(error);
-                this.setState({error});
+                alert(error.message);
             }) 
     }
 
@@ -88,9 +84,6 @@ class SignUp extends Component {
                                     SIGN UP
                                 </button>
                             </div>
-                            {
-                                (this.state.error.message !== '') ? alert(this.state.error.message) : <p></p>
-                            }
                             <hr />
                             <p className = "signin-link"><Link to = {'/signin'} className = "link">Already a user ? Sign in instead</Link></p>
                         </div>
